@@ -1,0 +1,884 @@
+/* Declaração de Fonte */
+@font-face {
+  font-family: "Amatic";
+  src: url("./fonts/AmaticSC-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Iron";
+  src: url("./fonts/Iron\ &\ Brine.ttf");
+}
+:root {
+  --cor1: #962626;
+  --cor2: #ffc765;
+  --cor3: #fff;
+}
+
+/* Configuração do Documento */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  text-transform: uppercase;
+}
+.max-width {
+  max-width: 1460px;
+  padding: 0 80px;
+  margin: auto;
+}
+
+/* TODOS OS CÓDIGOS SIMILARES */
+section {
+  padding: 50px 0;
+}
+section .title {
+  font-family: "Amatic", sans-serif;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--cor3);
+  position: relative;
+  margin-top: 50px;
+}
+section .title2 {
+  font-family: "iron", sans-serif;
+  text-align: center;
+  font-size: 60px;
+  color: var(--cor1);
+  position: relative;
+  font-weight: 200;
+  margin-top: 5px;
+}
+section .title2::before {
+  position: relative;
+  content: url("./img/detalhe-titulo.png");
+  padding: 0 10px;
+}
+section .title2::after {
+  position: relative;
+  content: url("./img/detalhe-titulo-2.png");
+  padding: 0 10px;
+}
+
+/* ------------------------------------ */
+
+/*HEADER NAVBAR*/
+.navbar {
+  position: fixed;
+  width: 100%;
+  padding: 5px 0;
+  font-family: "Amatic", sans-serif;
+  z-index: 999;
+  background: var(--cor1);
+
+  transition: all 0.3s ease;
+}
+.navbar .max-width {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.navbar .logo img {
+  height: 70px;
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+.navbar .logo img:hover {
+  transform: scale(1.2);
+}
+/* .navbar.menu.active {
+  left: 0;
+} */
+
+/* LINKS HEADER NAVBAR */
+.navbar .menu li {
+  list-style: none;
+  display: inline-block;
+}
+.navbar .menu li a {
+  color: var(--cor3);
+  font-size: 25px;
+  font-weight: 600;
+  margin-left: 25px;
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+
+.navbar .menu li a:hover {
+  color: orange;
+  font-weight: 800;
+  transition: color 0.3s ease;
+}
+
+/* BOTÃO CRIAR */
+.navbar .criar button {
+  background: #fff;
+  color: var(--cor1);
+  opacity: 0.8;
+  font-family: "iron";
+  font-size: 20px;
+  font-weight: 800;
+  padding: 8px 16px;
+  border: 5px solid orange;
+  border-radius: 45px;
+  box-shadow: 1px 2px 2px rgba(10, 4, 3, 0.438);
+  list-style: none;
+  opacity: 1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.navbar .criar button:hover {
+  background: orange;
+  border: 5px solid orange;
+  box-shadow: 1px 2px 2px rgba(10, 4, 3, 0.438);
+  color: var(--cor3);
+  text-shadow: 1px 2px 2px rgba(10, 4, 3, 0.9);
+}
+
+/* --------------------------------- */
+
+/* SECTIONS */
+.cardapio {
+  background: #111;
+  object-fit: cover;
+  color: #fff;
+  min-height: 100vh;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.cardapio-content {
+  align-items: center;
+  justify-content: center;
+}
+
+/* PESQUISAR POR ID */
+.pesquisar {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.pesquisar input {
+  height: 30px;
+  width: 150px;
+  border: none;
+  border-radius: 45px;
+  outline: none;
+  padding: 0 15px;
+  font-family: "iron";
+  text-align: center;
+}
+.pesquisar input:focus {
+  border-color: #b3b3b3;
+}
+.pesquisar button {
+  font-family: "iron";
+  font-size: 20px;
+  background: var(--cor1);
+  color: var(--cor3);
+  border: 2px solid orange;
+  text-shadow: 1px 2px 2px rgba(10, 4, 3, 0.9);
+  height: 30px;
+  width: 150px;
+  border-radius: 45px;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+.pesquisar button:hover {
+  background: var(--cor1);
+  color: orange;
+  transform: scale(1.1);
+  border: none;
+  cursor: pointer;
+}
+.pesquisar p{
+  font-family: "iron";
+  font-size: 35px;
+  margin-top: 16px;
+  border: 5px solid orange;
+  background: orange;
+  border-radius: 45px;
+  color: #962626;
+  transition: all 0.3s ease;
+}
+.pesquisar p:hover{
+  border: 5px solid #962626;
+  background: #962626;
+  color: var(--cor2);
+}
+
+/* CARD DO ITEM */
+article.card,
+article.card2,
+article.card3,
+article.card4,
+#pesquisado {
+  border-radius: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+article.card .box:hover,
+article.card2 .box:hover,
+article.card3 .box:hover,
+article.card4 .box:hover,
+#pesquisado .box:hover {
+  transform: scale(1.05);
+}
+article.card div.box,
+article.card2 div.box,
+article.card3 div.box,
+article.card4 div.box,
+#pesquisado div.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  width: 350px;
+  margin: 15px;
+  transition: all 0.3s ease;
+}
+
+/* IMAGEM DENTRO DO CARD DO ITEM */
+article.card div.box img,
+article.card2 div.box img,
+article.card3 div.box img,
+article.card4 div.box img,
+#pesquisado div.box img {
+  height: 80%;
+  width: 100%;
+  object-fit: cover;
+  background: var(--cor3);
+  opacity: 0.5;
+  border-radius: 10px 10px 0 0;
+}
+article.card div.box:hover img,
+article.card2 div.box:hover img,
+article.card3 div.box:hover img,
+article.card4 div.box:hover img,
+#pesquisado div.box:hover img {
+  opacity: 1;
+}
+
+/* NOME DO ITEM */
+article.card div.box .nome,
+article.card2 div.box .nome,
+article.card3 div.box .nome,
+article.card4 div.box .nome,
+#pesquisado div.box .nome {
+  font-family: "Iron";
+  font-size: 40px;
+  text-shadow: 1px 2px 2px rgba(10, 4, 3, 0.9);
+  position: absolute;
+  transition: all 0.3s ease;
+  max-width: 300px;
+  text-align: center;
+  font-weight: 200;
+}
+article.card div.box:hover .nome,
+article.card2 div.box:hover .nome,
+article.card3 div.box:hover .nome,
+article.card4 div.box:hover .nome,
+#pesquisado div.box:hover .nome {
+  opacity: 0;
+}
+
+/* DESCRIÇÃO DO ITEM */
+article.card div.box .descricao,
+article.card2 div.box .descricao,
+article.card3 div.box .descricao,
+article.card4 div.box .descricao,
+#pesquisado div.box .descricao {
+  display: flex;
+  align-self: flex-end;
+  margin-bottom: 35px;
+  flex-direction: row;
+  font-size: 10px;
+  position: absolute;
+  font-family: "iron";
+  font-weight: lighter;
+  max-width: 300px;
+  text-align: center;
+  text-shadow: 1px 2px 2px rgba(10, 4, 3, 0.9);
+  transition: all 0.3s ease;
+}
+article.card div.box:hover .descricao,
+article.card2 div.box:hover .descricao,
+article.card3 div.box:hover .descricao,
+article.card4 div.box:hover .descricao,
+#pesquisado div.box:hover .descricao {
+  opacity: 0;
+}
+
+/* PREÇO DO ITEM */
+article.card div.box .preco,
+article.card2 div.box .preco,
+article.card3 div.box .preco,
+article.card4 div.box .preco,
+#pesquisado div.box .preco {
+  font-family: "iron";
+  position: fixed;
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+article.card div.box:hover .preco,
+article.card2 div.box:hover .preco,
+article.card3 div.box:hover .preco,
+article.card4 div.box:hover .preco,
+#pesquisado div.box:hover .preco {
+  font-family: "iron";
+  opacity: 1;
+  text-shadow: 1px 2px 2px rgba(10, 4, 3, 0.94);
+  font-size: 70px;
+}
+article.card div.box .preco span,
+article.card2 div.box .preco span,
+article.card3 div.box .preco span,
+article.card4 div.box .preco span,
+#pesquisado div.box .preco span {
+  color: var(--cor1);
+}
+article.card div.box:hover .preco span,
+article.card2 div.box:hover .preco span,
+article.card3 div.box:hover .preco span,
+article.card4 div.box:hover .preco span,
+#pesquisado div.box:hover .preco span {
+  opacity: 1;
+  font-size: 70px;
+}
+
+/* CONTAINER DOS BOTÕES */
+article.card .box .button,
+article.card2 .box .button,
+article.card3 .box .button,
+article.card4 .box .button,
+#pesquisado .box .button {
+  display: flex;
+  font-size: 20px;
+  justify-content: space-between;
+  align-self: flex-end;
+  position: absolute;
+  height: 32px;
+  width: 350px;
+}
+
+/* BOTÃO EDITAR */
+article.card .box .button .editar,
+article.card2 .box .button .editar,
+article.card3 .box .button .editar,
+article.card4 .box .button .editar,
+#pesquisado .box .button .editar {
+  display: flex;
+  color: var(--cor2);
+  font-size: 20px;
+  font-family: "iron";
+  align-items: center;
+  justify-content: center;
+  background: var(--cor1);
+  height: 30px;
+  width: 50%;
+  border: none;
+  text-shadow: 1px 2px 2px rgba(10, 4, 3, 0.94);
+  transition: all 0.3s ease;
+  border-right: 1px solid #222;
+  border-radius: 0 0 0px 10px;
+  cursor: pointer;
+}
+article.card .box .button .editar span,
+article.card2 .box .button .editar span,
+article.card3 .box .button .editar span,
+article.card4 .box .button .editar span,
+#pesquisado .box .button .editar span{
+ margin-right: 10px;
+}
+article.card div.button .editar:hover,
+article.card2 div.button .editar:hover,
+article.card3 div.button .editar:hover,
+article.card4 div.button .editar:hover,
+#pesquisado div.button .editar:hover {
+  background: #222;
+  color: orange;
+  height: 100%;
+}
+
+/* BOTÃO DELETAR */
+article.card .box .button .deletar,
+article.card2 .box .button .deletar,
+article.card3 .box .button .deletar,
+article.card4 .box .button .deletar,
+#pesquisado .box .button .deletar {
+  display: flex;
+  color: var(--cor2);
+  font-size: 20px;
+  font-family: "iron";
+  align-items: center;
+  justify-content: center;
+  background: var(--cor1);
+  height: 30px;
+  width: 50%;
+  border: none;
+  text-shadow: 1px 2px 2px rgba(10, 4, 3, 0.94);
+  transition: all 0.8s ease;
+  border-radius: 0 0 10px 0px;
+  cursor: pointer;
+}
+article.card .box .button .deletar span,
+article.card2 .box .button .deletar span,
+article.card3 .box .button .deletar span,
+article.card4 .box .button .deletar span,
+#pesquisado .box .button .deletar span{
+ margin-right: 10px;
+}
+
+article.card div.button .deletar:hover,
+article.card2 div.button .deletar:hover,
+article.card3 div.button .deletar:hover,
+article.card4 div.button .deletar:hover,
+#pesquisado div.button .deletar:hover {
+  background: #222;
+  color: orange;
+  height: 100%;
+}
+
+/* --------------------------------- */
+
+/* MODAL CRIAR */
+.fundo-modal{
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #0000004d;
+  align-items: center;
+  justify-content: center;
+}
+/* CORPO DO MODAL */
+.modal{
+  width: 40vw;
+  height: 68vh;
+  background-image: url("https://media.istockphoto.com/vectors/black-grille-background-vector-id1151863743?k=20&m=1151863743&s=170667a&w=0&h=IN5FnIfxKGTmOynop0I7ZdaaGQX0cDXrGquk8XmjeBg=");
+  object-fit: cover;
+  opacity: 0.8;
+  border-radius: 15px;
+  user-select: none;
+}
+
+/* CABEÇALHO DO MODAL */
+.modal-header{
+  width: 100%;
+  height: 7vh;
+  background: var(--cor1);
+  border-radius: 15px 15px 0 0;
+  opacity: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* TÍTULO DO MODAL */
+.modal-header h2{
+  font-family: "iron";
+  color: var(--cor3);
+  font-weight: 200;
+  font-size: 30px;
+  text-shadow: 1px 2px 2px rgba(10, 4, 3, 0.94);
+}
+
+/* ÍCONE DO MODAL CRIAR */
+.modal-header span{
+  color: var(--cor2);
+  font-weight: 200;
+  font-size: 30px;
+  text-shadow: 1px 2px 2px rgba(10, 4, 3, 0.94);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.modal-header span:hover{
+  color: orange;
+}
+
+/* CORPO INTERNO DO MODAL */
+.corpo-modal{
+  display: flex;
+  flex-direction: column;
+  padding: 15px 15px;
+}
+
+/* INPUTS E DROPDOWNBOX DO MODAL */
+.corpo-modal input,
+.corpo-modal select{
+  height: 5vh;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 6px;
+  text-align: center;
+  font-family: "iron";
+  font-size: 15px;
+}
+
+/* TEXT AREA DO MODAL */
+.corpo-modal textarea{
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 6px;
+  text-align: center;
+  font-family: "iron";
+  font-size: 15px;
+  resize: none;
+}
+
+/* TÍTULO DO DROPDOWNBOX DO MODAL */
+.corpo-modal label{
+  color: white;
+  font-family: "iron";
+  text-align: center;
+  font-size: 20px;
+}
+
+/* BOTÃO ENVIAR NOVA CRIAÇÃO DO MODAL */
+.corpo-modal button{
+  width: 130px;
+  align-self: center;
+  background: #fff;
+  color: var(--cor1);
+  opacity: 0.8;
+  font-family: "iron";
+  font-size: 20px;
+  font-weight: 800;
+  padding: 8px 16px;
+  border: 5px solid orange;
+  border-radius: 45px;
+  box-shadow: 1px 2px 2px rgba(10, 4, 3, 0.438);
+  opacity: 1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.corpo-modal button:hover{
+  background: orange;
+  border: 5px solid orange;
+  box-shadow: 1px 2px 2px rgba(10, 4, 3, 0.438);
+  color: var(--cor3);
+  text-shadow: 1px 2px 2px rgba(10, 4, 3, 0.9);
+}
+/* FIM DO MODAL CRIAR */
+
+/* ----------------------------------------------- */
+
+/* MODAL DELETAR */
+.fundo-modal2{
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #0000004d;
+  align-items: center;
+  justify-content: center;
+}
+.modal2{
+  width: 40vw;
+  height: 30vh;
+  background-image: url("https://media.istockphoto.com/vectors/black-grille-background-vector-id1151863743?k=20&m=1151863743&s=170667a&w=0&h=IN5FnIfxKGTmOynop0I7ZdaaGQX0cDXrGquk8XmjeBg=");
+  object-fit: cover;
+  opacity: 0.8;
+  border-radius: 15px;
+  user-select: none;
+}
+
+/* CABEÇALHO DO MODAL */
+.modal-header2{
+  width: 100%;
+  height: 7vh;
+  background: var(--cor1);
+  border-radius: 15px 15px 0 0;
+  opacity: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* TÍTULO DO MODAL */
+.modal-header2 h2{
+  font-family: "iron";
+  color: var(--cor3);
+  font-weight: 200;
+  font-size: 30px;
+  text-shadow: 1px 2px 2px rgba(10, 4, 3, 0.94);
+}
+
+/* ÍCONE DO MODAL CRIAR */
+.modal-header2 span{
+  color: var(--cor2);
+  font-weight: 200;
+  font-size: 30px;
+  text-shadow: 1px 2px 2px rgba(10, 4, 3, 0.94);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.modal-header2 span:hover{
+  color: orange;
+}
+
+/* CORPO INTERNO DO MODAL */
+.button-modal{
+  display: flex;
+  padding: 15px 15px;
+  flex-direction: column;
+}
+.button-modal h2{
+  font-family: 'iron';
+  color: var(--cor3);
+  font-size: 20px;
+  font-weight: 200;
+  text-align: center;
+}
+
+/* BOTÕES SIM/NÃO */
+.buttons{
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-around;
+}
+
+/* BOTÃO NÃO */
+.buttons .nao{
+  width: 130px;
+  align-self: center;
+  background: #fff;
+  color: var(--cor1);
+  opacity: 0.8;
+  font-family: "iron";
+  font-size: 20px;
+  font-weight: 800;
+  padding: 8px 16px;
+  border: 5px solid orange;
+  border-radius: 45px;
+  box-shadow: 1px 2px 2px rgba(10, 4, 3, 0.438);
+  opacity: 1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.buttons .nao:hover{
+  background: orange;
+  border: 5px solid orange;
+  box-shadow: 1px 2px 2px rgba(10, 4, 3, 0.438);
+  color: var(--cor3);
+  text-shadow: 1px 2px 2px rgba(10, 4, 3, 0.9);
+}
+
+/* BOTÃO SIM */
+.buttons .sim{
+  width: 130px;
+  align-self: center;
+  background: #fff;
+  color: var(--cor1);
+  opacity: 0.8;
+  font-family: "iron";
+  font-size: 20px;
+  font-weight: 800;
+  padding: 8px 16px;
+  border: 5px solid var(--cor1);
+  border-radius: 45px;
+  box-shadow: 1px 2px 2px rgba(10, 4, 3, 0.438);
+  opacity: 1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.buttons .sim:hover{
+  background: var(--cor1);
+  border: 5px solid var(--cor1);
+  box-shadow: 1px 2px 2px rgba(10, 4, 3, 0.438);
+  color: orange;
+  text-shadow: 1px 2px 2px rgba(10, 4, 3, 0.9);
+}
+/* FIM DO MODAL DELETAR */
+
+/* ----------------------------------------------- */
+
+/* INÍCIO MODAL EDITAR */
+.fundo-modal3{
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #0000004d;
+  align-items: center;
+  justify-content: center;
+}
+/* CORPO DO MODAL */
+.modal3{
+  width: 40vw;
+  height: 68vh;
+  background-image: url("https://media.istockphoto.com/vectors/black-grille-background-vector-id1151863743?k=20&m=1151863743&s=170667a&w=0&h=IN5FnIfxKGTmOynop0I7ZdaaGQX0cDXrGquk8XmjeBg=");
+  object-fit: cover;
+  opacity: 0.8;
+  border-radius: 15px;
+  user-select: none;
+}
+
+/* CABEÇALHO DO MODAL */
+.modal-header3{
+  width: 100%;
+  height: 7vh;
+  background: var(--cor1);
+  border-radius: 15px 15px 0 0;
+  opacity: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* TÍTULO DO MODAL */
+.modal-header3 h2{
+  font-family: "iron";
+  color: var(--cor3);
+  font-weight: 200;
+  font-size: 30px;
+  text-shadow: 1px 2px 2px rgba(10, 4, 3, 0.94);
+}
+
+/* ÍCONE DO MODAL CRIAR */
+.modal-header3 span{
+  color: var(--cor2);
+  font-weight: 200;
+  font-size: 30px;
+  text-shadow: 1px 2px 2px rgba(10, 4, 3, 0.94);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.modal-header3 span:hover{
+  color: orange;
+}
+
+/* CORPO INTERNO DO MODAL */
+.corpo-modal3{
+  display: flex;
+  flex-direction: column;
+  padding: 15px 15px;
+}
+
+/* INPUTS E DROPDOWNBOX DO MODAL */
+.corpo-modal3 input,
+.corpo-modal3 select{
+  height: 5vh;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 6px;
+  text-align: center;
+  font-family: "iron";
+  font-size: 15px;
+}
+
+/* TEXT AREA DO MODAL */
+.corpo-modal3 textarea{
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 6px;
+  text-align: center;
+  font-family: "iron";
+  font-size: 15px;
+  resize: none;
+}
+
+/* TÍTULO DO DROPDOWNBOX DO MODAL */
+.corpo-modal3 label{
+  color: white;
+  font-family: "iron";
+  text-align: center;
+  font-size: 20px;
+}
+
+/* BOTÃO ENVIAR NOVA CRIAÇÃO DO MODAL */
+.corpo-modal3 button{
+  width: 170px;
+  align-self: center;
+  background: #fff;
+  color: var(--cor1);
+  opacity: 0.8;
+  font-family: "iron";
+  font-size: 20px;
+  font-weight: 800;
+  padding: 8px 16px;
+  border: 5px solid orange;
+  border-radius: 45px;
+  box-shadow: 1px 2px 2px rgba(10, 4, 3, 0.438);
+  opacity: 1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.corpo-modal3 button:hover{
+  background: orange;
+  border: 5px solid orange;
+  box-shadow: 1px 2px 2px rgba(10, 4, 3, 0.438);
+  color: var(--cor3);
+  text-shadow: 1px 2px 2px rgba(10, 4, 3, 0.9);
+}
+
+/* FIM MODAL EDITAR */
+
+/* INÍCIO MODAL NOTIFICAÇÃO */
+
+
+/* FIM MODAL NOTIFICAÇÃO */
+.notificacao{
+  display: none;
+  min-width: 150px;
+  max-width: 300px;
+  height: 80px;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 2px solid ;
+  border-radius: 10px;
+  background-image: url("https://media.istockphoto.com/vectors/black-grille-background-vector-id1151863743?k=20&m=1151863743&s=170667a&w=0&h=IN5FnIfxKGTmOynop0I7ZdaaGQX0cDXrGquk8XmjeBg=");
+  object-fit: cover;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 1px 2px 2px rgba(10, 4, 3, 0.438);
+  white-space: nowrap;
+  padding: 0 10px;
+}
+.notificacao span{
+  text-shadow: 1px 2px 2px rgba(10, 4, 3, 0.9);
+  margin-right: 5px;
+  font-size: 30px;
+}
+.notificacao p{
+  color: white;
+  font-family: 'iron';
+  text-shadow: 1px 2px 2px rgba(10, 4, 3, 0.9);
+}
+.notificacao-span-sucesso{
+  color: green;
+}
+.notificacao-span-erro{
+  color: red;
+}
+/* --------------------------------------------- */
+
+/* RESPONSIVIDADE */
+@media (max-width: 600px) {
+  article.card div.button a {
+    padding: 5px 15px;
+    font-size: 18px;
+    
+  }
+}

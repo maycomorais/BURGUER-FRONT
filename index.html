@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BURGUER TOWN</title>
+    <!-- LINK PARA O FONTAWESOME -->
+    <script
+      src="https://kit.fontawesome.com/c08d346443.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- LINK DA FOLHA DE ESTILO -->
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+
+  <!-- INÍCIO DO DOCUMENTO -->
+  <body>
+    <!-- HEADER NAVBAR -->
+    <div class="navbar">
+      <div class="max-width">
+        <!-- LOGO -->
+        <div class="logo">
+          <a href="#"><img src="./assets/img/logo.png" alt="" /></a>
+        </div>
+        <!-- MENU NAVBAR -->
+        <ul class="menu">
+          <li><a id="a" href="#">Início</a></li>
+          <li><a id="b" href="#cardapio">lanches</a></li>
+          <li><a id="c" href="#cardapio2">bebidas</a></li>
+          <li><a id="d" href="#cardapio3">porções</a></li>
+          <li><a id="e" href="#cardapio4">sobremesas</a></li>
+        </ul>
+        <!-- BOTÃO CRIAR ITEM -->
+        <div class="criar" id="criar">
+          <button onclick="mostrarModalCriar()">
+            <i class="fa-solid fa-circle-plus"></i> criar
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- FIM DA HEADER NAVBAR -->
+
+    <!-- SEÇÃO LANCHES -->
+    <section class="cardapio" id="cardapio">
+      <div class="max-width">
+        <!-- TÍTULO 1 -->
+        <h2 class="title">Aprecie sem moderação nossos</h2>
+        <!-- TÍTULO 2 -->
+        <h2 class="title2">lanches</h2>
+        <!-- PESQUISAR -->
+        <div class="pesquisar">
+          <input
+            type="text"
+            id="inputNomeBurguer"
+            placeholder="Digite o nome Item"
+          />
+          <!-- BOTÃO PESQUISAR -->
+          <button id="printarPorId">ESCOLHER</button>
+          <!-- BOX DA CARD PESQUISADO -->
+          <div id="pesquisado"></div>
+        </div>
+        <div class="cardapio-content">
+          <!-- BOX DA CARD -->
+          <article class="card" id="card"></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO BEBIDAS -->
+    <section class="cardapio" id="cardapio2">
+      <div class="max-width">
+        <h2 class="title">Aprecie sem moderação nossas</h2>
+        <h2 class="title2">bebidas</h2>
+        <div class="cardapio-content">
+          <!-- BOX DA CARD -->
+          <article class="card2" id="card2"></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO PORÇÃO -->
+    <section class="cardapio" id="cardapio3">
+      <div class="max-width">
+        <h2 class="title">Aprecie sem moderação nossas</h2>
+        <h2 class="title2">porções</h2>
+        <div class="cardapio-content">
+          <!-- BOX DA CARD -->
+          <article class="card3" id="card3"></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO SOBREMESA -->
+    <section class="cardapio" id="cardapio4">
+      <div class="max-width">
+        <h2 class="title">Aprecie sem moderação nossas</h2>
+        <h2 class="title2">sobremesas</h2>
+        <div class="cardapio-content">
+          <!-- BOX DA CARD -->
+          <article class="card4" id="card4"></article>
+        </div>
+      </div>
+    </section>
+    <!-- FIM DAS SECTIONS -->
+
+    <!-- --------------------------------------- -->
+
+    <!-- MODAL CRIAR-->
+    <div class="fundo-modal" id="fundoModalCriar">
+      <div class="modal">
+        <!-- HEADER MODAL -->
+        <div class="modal-header">
+          <!-- TÍTULO MODAL -->
+          <h2>CRIAR NOVO ITEM</h2>
+          <!-- ÍCONE FECHAR MODAL -->
+          <span id="esconder" onclick="esconderModalCriar()">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </span>
+        </div>
+        <!-- INPUTS DO MODAL -->
+        <div class="corpo-modal">
+          <input class="input-nome" placeholder="Nome" id="inputNome" />
+          <textarea
+            class="ingredientes"
+            type="text"
+            rows="5"
+            placeholder="ingredientes"
+            id="inputIngredientes"
+          ></textarea>
+          <input class="input-foto" placeholder="link da Foto" id="inputFoto" />
+          <input
+            type="number"
+            class="input-preco"
+            placeholder="Preço"
+            id="inputPreco"
+          />
+          <!-- DROPDOWNBOX DO INPUT MODAL -->
+          <label class="input-categoria" for="categoria">Categoria:</label>
+          <select name="categoria" id="inputCategoria">
+            <!-- OPÇÕES DO DROPDOWN BOX DO MODAL -->
+            <option value="lanche">Lanche</option>
+            <option value="bebida">Bebida</option>
+            <option value="porção">Porção</option>
+            <option value="sobremesa">Sobremesa</option>
+          </select>
+          <!-- BOTÃO CRIAR NOVO ITEM DO MODAL -->
+          <button
+            class="botao-modal"
+            id="finalizar"
+            onclick="cadastrarNovoBurguer()"
+          >
+            <i class="fa-solid fa-circle-plus"></i> CRIAR
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- FIM MODAL CRIAR -->
+
+    <!-- --------------------------------- -->
+
+    <!-- MODAL DELETAR -->
+    <div class="fundo-modal2" id="fundoModalDeletar">
+      <div class="modal2">
+        <!-- HEADER MODAL -->
+        <div class="modal-header2">
+          <!-- TÍTULO MODAL -->
+          <h2>CONFIRMAÇÃO NECESSÁRIA</h2>
+          <!-- ÍCONE FECHAR MODAL -->
+          <span id="esconderDelete" onclick="esconderModalDeletar()">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </span>
+        </div>
+        <div class="button-modal">
+          <h2>TEM CERTEZA QUE QUER EXCLUIR ESTE ITEM?</h2>
+          <div class="buttons">
+            <button class="nao" onclick="esconderModalDeletar()">NÃO</button>
+            <button class="sim" id="confirmarDelete">SIM</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- FIM MODAL DELETAR -->
+
+    <!-- --------------------------------- -->
+
+    <!-- MODAL EDITAR -->
+    <div class="fundo-modal3" id="fundoModalEditar">
+      <div class="modal3">
+        <!-- HEADER MODAL -->
+        <div class="modal-header3">
+          <!-- TÍTULO MODAL -->
+          <h2>EDITAR ITEM</h2>
+          <!-- ÍCONE FECHAR MODAL -->
+          <span id="esconder" onclick="esconderModalEditar()">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </span>
+        </div>
+        <!-- INPUTS DO MODAL -->
+        <div class="corpo-modal3">
+          <input class="input-nome" placeholder="Nome" id="inputNomeEdicao" />
+          <textarea
+            class="ingredientes"
+            type="text"
+            rows="5"
+            placeholder="ingredientes"
+            id="inputIngredientesEdicao"
+          ></textarea>
+          <input
+            class="input-foto"
+            placeholder="link da Foto"
+            id="inputFotoEdicao"
+          />
+          <input
+            type="number"
+            class="input-preco"
+            placeholder="Preço"
+            id="inputPrecoEdicao"
+          />
+          <!-- DROPDOWNBOX DO INPUT MODAL -->
+          <label class="input-categoria" for="categoria">Categoria:</label>
+          <select name="categoria" id="inputCategoriaEdicao">
+            <!-- OPÇÕES DO DROPDOWN BOX DO MODAL -->
+            <option value="lanche">Lanche</option>
+            <option value="bebida">Bebida</option>
+            <option value="porção">Porção</option>
+            <option value="sobremesa">Sobremesa</option>
+          </select>
+          <!-- BOTÃO CRIAR NOVO ITEM DO MODAL -->
+          <button
+            class="botao-modal3"
+            id="confirmarAtualizacao"
+          >
+            <i class="fa-solid fa-arrow-rotate-right"></i> ATUALIZAR
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- FIM MODAL EDITAR -->
+
+     <!-- --------------------------------- -->
+
+     <!-- NOTIFICAÇÃO -->
+     <div class="notificacao" id="notificacao">
+       <span id="notificacaoSpan" onclick="esconderModalNotificacao()"></span>
+       <p id="notificacaoP"></p>
+     </div>
+
+     <!-- FIM DA NOTIFICAÇÃO -->
+
+    <script src="./assets/script.js"></script>
+  </body>
+</html>
